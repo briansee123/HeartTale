@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cso16ptxsys7n"]
+
+[ext_resource type="Script" path="res://mine/script/player_group.gd" id="1_517oe"]
+[ext_resource type="PackedScene" uid="uid://dhglaskb1pqp" path="res://mine/scene/character.tscn" id="1_gdlj3"]
+[ext_resource type="Texture2D" uid="uid://cgmp1u6fh3wct" path="res://mine/mine/Aurora_b-removebg-preview.png" id="3_wl7ah"]
+[ext_resource type="Texture2D" uid="uid://bgfx3mt484j8n" path="res://mine/mine/cursor_finger.png" id="4_qpbo4"]
+[ext_resource type="Texture2D" uid="uid://crsuiu81w51ts" path="res://mine/mine/yuumi_b-removebg-preview.png" id="5_igdj1"]
+[ext_resource type="Texture2D" uid="uid://ddc6ml485l3cl" path="res://mine/mine/Zoeb2-removebg-preview.png" id="6_i17tp"]
+[ext_resource type="Texture2D" uid="uid://2xbft0aagil5" path="res://mine/mine/RIVEN_b-removebg-preview.png" id="7_sdr1d"]
+
+[node name="PlayerGroup" type="Node2D"]
+script = ExtResource("1_517oe")
+
+[node name="Character" parent="." instance=ExtResource("1_gdlj3")]
+
+[node name="Sprite2D" parent="Character" index="0"]
+scale = Vector2(0.0534096, 0.0534096)
+texture = ExtResource("3_wl7ah")
+
+[node name="focus" parent="Character" index="1"]
+texture = ExtResource("4_qpbo4")
+
+[node name="Character2" parent="." instance=ExtResource("1_gdlj3")]
+
+[node name="Sprite2D" parent="Character2" index="0"]
+scale = Vector2(0.0533174, 0.0533174)
+texture = ExtResource("5_igdj1")
+
+[node name="focus" parent="Character2" index="1"]
+texture = ExtResource("4_qpbo4")
+
+[node name="Character3" parent="." instance=ExtResource("1_gdlj3")]
+
+[node name="Sprite2D" parent="Character3" index="0"]
+scale = Vector2(0.050773, 0.050773)
+texture = ExtResource("6_i17tp")
+
+[node name="focus" parent="Character3" index="1"]
+texture = ExtResource("4_qpbo4")
+
+[node name="Character4" parent="." instance=ExtResource("1_gdlj3")]
+
+[node name="Sprite2D" parent="Character4" index="0"]
+scale = Vector2(0.0474365, 0.0474365)
+texture = ExtResource("7_sdr1d")
+
+[node name="focus" parent="Character4" index="1"]
+texture = ExtResource("4_qpbo4")
+
+[editable path="Character"]
+[editable path="Character2"]
+[editable path="Character3"]
+[editable path="Character4"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpe5nfhiuxsw3"]
+
+[ext_resource type="Script" path="res://mine/script/startup.gd" id="1_g2n1w"]
+[ext_resource type="Texture2D" uid="uid://bujqiguio0che" path="res://mine/mine/hearttale png.jpg" id="2_40sop"]
+
+[sub_resource type="Animation" id="Animation_atsrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qib55"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xej8v"]
+_data = {
+"RESET": SubResource("Animation_atsrd"),
+"fade": SubResource("Animation_qib55")
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(1, 27)
+scale = Vector2(6.27729, 6.29311)
+script = ExtResource("1_g2n1w")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.500007, -0.999992)
+scale = Vector2(0.247095, 0.247253)
+texture = ExtResource("2_40sop")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -162.0
+offset_top = -96.0
+offset_right = -122.0
+offset_bottom = -56.0
+scale = Vector2(8.24093, 4.78256)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xej8v")
+}

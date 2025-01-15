@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt0k3hyi6sqle"]
+
+[ext_resource type="Script" path="res://mine/script/main_menu.gd" id="1_ecg1w"]
+[ext_resource type="Texture2D" uid="uid://c7nrej565pt1t" path="res://mine/mine/menu.jpeg" id="2_q70aj"]
+
+[sub_resource type="SystemFont" id="SystemFont_l2wvn"]
+
+[sub_resource type="SystemFont" id="SystemFont_6873n"]
+font_names = PackedStringArray("Impact")
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1197.0
+offset_top = -690.0
+offset_right = -1197.0
+offset_bottom = -690.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.26959, 1.26959)
+script = ExtResource("1_ecg1w")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q70aj")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_l2wvn")
+theme_override_font_sizes/font_size = 14
+text = "Hearttale"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="Stat_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_fonts/font = SubResource("SystemFont_6873n")
+theme_override_font_sizes/font_size = 8
+text = "Start Game"
+
+[node name="Option_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = SubResource("SystemFont_6873n")
+theme_override_font_sizes/font_size = 8
+text = "Option"
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = SubResource("SystemFont_6873n")
+theme_override_font_sizes/font_size = 8
+text = "Exit"
